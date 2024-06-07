@@ -54,6 +54,9 @@ function addGLBModel(glbFile, scale, position, rotation) {
   });
 }
 
+let blueSpotlight, redSpotlight;
+let isRedLightVisible = true;
+
 
 addGLBModel(
   'resources/models/wultuh/ps1_style_walter_white.glb',
@@ -65,7 +68,7 @@ addGLBModel(
 addGLBModel(
   'resources/models/labs/Chemistry.glb',
   [4, 4, 4],
-  [14.7, 4, 0],
+  [10.7, 4, 0],
   [0, 0.1, -.05]
 );
 
@@ -73,14 +76,14 @@ addGLBModel(
 addGLBModel(
   'resources/models/labs/Chemistry.glb',
   [4, 4, 4],
-  [-15.3, 4, 21],
+  [-10, 4, 21],
   [0, 0.1, -.05]
 );
 
 addGLBModel(
   'resources/models/labs/Chemistry.glb',
   [4, 4, 4],
-  [-15.3, 4, -21],
+  [-10, 4, -21],
   [0, 0.1, -.05]
 );
 
@@ -88,21 +91,21 @@ addGLBModel(
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [15, 2, -21],
+  [10, 2, -21],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [15, 2, -14],
+  [10, 2, -14],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [15, 2, -7],
+  [10, 2, -7],
   [0, 3.14/2, 0]
 );
 
@@ -116,21 +119,21 @@ addGLBModel(
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [15, 2, 7],
+  [10, 2, 7],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [15, 2, 14],
+  [10, 2, 14],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [15, 2, 21],
+  [10, 2, 21],
   [0, 3.14/2, 0]
 );
 
@@ -146,77 +149,77 @@ addGLBModel(
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [-15, 2, -14],
+  [-10, 2, -14],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [-15, 2, -7],
+  [-10, 2, -7],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [-15, 2, 0],
+  [-10, 2, 0],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [-15, 2, 7],
+  [-10, 2, 7],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/Table.glb',
   [3, 3, 6],
-  [-15, 2, 14],
+  [-10, 2, 14],
   [0, 3.14/2, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [15, 3.7, 8],
+  [10, 3.7, 8],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [15, 3.7, -15],
+  [10, 3.7, -15],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [13, 3.7, -20],
+  [10, 3.7, -20],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [-13, 3.7, -15],
+  [-10, 3.7, -15],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [-15, 3.7, 8],
+  [-10, 3.7, 8],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [-14, 3.7, 9.5],
+  [-10, 3.7, 9.5],
   [0, 0, 0]
 );
 
@@ -224,56 +227,56 @@ addGLBModel(
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [-15, 3.7, 2],
+  [-10, 3.7, 2],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask1.glb',
   [1, 1, 1],
-  [-14, 3.7, -1],
+  [-10, 3.7, -1],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask2.glb',
   [1, 1, 1],
-  [-15, 3.7, -5],
+  [-10, 3.7, -5],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask2.glb',
   [1, 1, 1],
-  [-14.5, 3.7, 15],
+  [-10, 3.7, 15],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask2.glb',
   [1, 1, 1],
-  [15, 3.7, 13],
+  [10, 3.7, 13],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask2.glb',
   [1, 1, 1],
-  [15, 3.7, -7],
+  [10, 3.7, -7],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask3.glb',
   [.05, .05, .05],
-  [15, 3.3, 20],
+  [10, 3.3, 20],
   [0, 0, 0]
 );
 
 addGLBModel(
   'resources/models/labs/flask3.glb',
   [.05, .05, .05],
-  [15, 3.3, 23],
+  [10, 3.3, 23],
   [0, 0, 0]
 );
 
@@ -329,6 +332,49 @@ addGLBModel(
   [0, 3.14/3, 0]
 );
 
+addGLBModel(
+  'resources/models/labs/light.glb',
+  [5, 5, 5],
+  [0, 28.5, 30],
+  [0, 3.14/2, 0]
+);
+
+
+addGLBModel(
+  'resources/models/labs/light.glb',
+  [5, 5, 5],
+  [20, 28.5, 30],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/light.glb',
+  [5, 5, 5],
+  [-20, 28.5, 30],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/light.glb',
+  [5, 5, 5],
+  [0, 28.5, -20],
+  [0, 3.14/2, 0]
+);
+
+
+addGLBModel(
+  'resources/models/labs/light.glb',
+  [5, 5, 5],
+  [20, 28.5, -20],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/light.glb',
+  [5, 5, 5],
+  [-20, 28.5, -20],
+  [0, 3.14/2, 0]
+);
 
 
 
@@ -645,8 +691,8 @@ function main() {
 
   // camera.position.z = 3.5;
 
-  camera.position.set(0, 10, 20);
-  camera.lookAt(0, 0, 0);
+  camera.position.set(0.5, 10, -2.5);
+  camera.lookAt(0.5, 0, -2.5);
 
   // controls = new PointerLockControls(camera, document.body);
 
@@ -732,7 +778,7 @@ function main() {
 
   var color, intensity, light, helper;
 
-  /*
+  
   // Directional Light to Simulate The Sun:
   color = 0xFFFFFF;
   intensity = 1;
@@ -741,12 +787,12 @@ function main() {
   light.target.position.set(-5, 0, 0);
   scene.add(light);
   scene.add(light.target);
-
+/*
   // SpotLights for lamps:
   color = 0xFFFFFF;
-  intensity = 400;
+  intensity = 4000;
   light = new THREE.SpotLight(color, intensity);
-  light.position.set(0, 9, -6.5);
+  light.position.set(0, 28, 30);
   light.target.position.set(0, 0, -6.5);
   light.angle = 10;
   scene.add(light);
@@ -755,10 +801,10 @@ function main() {
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 400;
+  intensity = 4000;
   light = new THREE.SpotLight(color, intensity);
-  light.position.set(18, 9, -6.5);
-  light.target.position.set(18, 0, -6.5);
+  light.position.set(18, 28, 30);
+  light.target.position.set(18, 0, -10);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
@@ -766,10 +812,10 @@ function main() {
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 400;
+  intensity = 4000;
   light = new THREE.SpotLight(color, intensity);
-  light.position.set(-18, 9, -6.5);
-  light.target.position.set(-18, 0, -6.5);
+  light.position.set(-18, 28, 30);
+  light.target.position.set(-18, 0, -10);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
@@ -777,10 +823,10 @@ function main() {
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 400;
+  intensity = 4000;
   light = new THREE.SpotLight(color, intensity);
-  light.position.set(0, 9, -16.5);
-  light.target.position.set(0, 0, -16.5);
+  light.position.set(0, 28, -20);
+  light.target.position.set(0, 0, -10);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
@@ -788,9 +834,9 @@ function main() {
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 400;
+  intensity = 4000;
   light = new THREE.SpotLight(color, intensity);
-  light.position.set(18, 9, -16.5);
+  light.position.set(18, 28, -20);
   light.target.position.set(18, 0, -16.5);
   light.angle = 10;
   scene.add(light);
@@ -799,15 +845,32 @@ function main() {
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 400;
+  intensity = 4000;
   light = new THREE.SpotLight(color, intensity);
-  light.position.set(-18, 9, -16.5);
+  light.position.set(-18, 28, -20);
   light.target.position.set(-18, 0, -16.5);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
   helper = new THREE.SpotLightHelper(light);
-  scene.add(helper);*/
+  scene.add(helper);
+  */
+
+  redSpotlight = new THREE.SpotLight(0xEE4B2B, 1000);
+  redSpotlight.position.set(0, 7, -40);
+  redSpotlight.target.position.set(-18, 0, -16.5);
+  redSpotlight.angle = 10;
+  scene.add(redSpotlight);
+  scene.add(redSpotlight.target);
+  scene.add(new THREE.SpotLightHelper(redSpotlight));
+
+  blueSpotlight = new THREE.SpotLight(0x0000FF, 1000);
+  blueSpotlight.position.set(0, 7, -40);
+  blueSpotlight.target.position.set(-18, 0, -20);
+  blueSpotlight.angle = 10;
+  scene.add(blueSpotlight);
+  scene.add(blueSpotlight.target);
+  scene.add(new THREE.SpotLightHelper(blueSpotlight));
 
 
 /*
@@ -1062,6 +1125,18 @@ function main() {
 }
 
 
+function toggleSpotlights() {
+  if (isRedLightVisible) {
+    redSpotlight.visible = true;
+    blueSpotlight.visible = false;
+  } else {
+    redSpotlight.visible = false;
+    blueSpotlight.visible = true;
+  }
+  isRedLightVisible = !isRedLightVisible;
+}
+
+
 let cameraSpeed = .001;
 
 function render(time) {
@@ -1071,7 +1146,8 @@ function render(time) {
   // firstPersonControls.update(0.1);
 
   // controls.update();
-  // camera.position.z -= cameraSpeed * time;
+  // camera.position.y += (cameraSpeed * time/10);
+  // camera.rotation.z += (cameraSpeed * time)/100;
 
 
   renderer.render(scene, camera);
@@ -1082,6 +1158,9 @@ function render(time) {
 main();
 
 requestAnimationFrame(render);
+
+setInterval(toggleSpotlights, 500);
+
 
 const color = 0xFFFFFF;
 const intensity = 3;
