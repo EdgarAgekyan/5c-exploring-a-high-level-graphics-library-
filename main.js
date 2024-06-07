@@ -57,6 +57,8 @@ function addGLBModel(glbFile, scale, position, rotation) {
 let blueSpotlight, redSpotlight;
 let isRedLightVisible = true;
 
+let elapsedTime = 0;
+let controlsEnabled = false;
 
 addGLBModel(
   'resources/models/wultuh/ps1_style_walter_white.glb',
@@ -691,8 +693,23 @@ function main() {
 
   // camera.position.z = 3.5;
 
-  camera.position.set(0.5, 10, -2.5);
+  camera.position.set(0.5, 2, -2.5);
   camera.lookAt(0.5, 0, -2.5);
+
+
+  const listener = new THREE.AudioListener();
+  camera.add(listener);
+
+  const sound = new THREE.Audio(listener);
+
+  const audioLoader = new THREE.AudioLoader();
+  audioLoader.load('resources/models/babyblue.mp3', function(buffer) {
+    sound.setBuffer(buffer);
+    sound.setLoop(true);
+    sound.setVolume(0.5);
+    sound.play();
+  });
+
 
   // controls = new PointerLockControls(camera, document.body);
 
@@ -700,11 +717,12 @@ function main() {
   //   controls.lock();
   // });
 
-
-
-  controls = new OrbitControls(camera, renderer.domElement);
-  controls.target.set(0, 5, 0);
-  controls.update();
+  
+  // if ( We want to enable this after 20 seconds has passed ) {
+  //   controls = new OrbitControls(camera, renderer.domElement);
+  //   controls.target.set(0, 5, 0);
+  //   controls.update();
+  // }
 
   // firstPersonControls = new FirstPersonControls(camera, renderer.domElement);
   // firstPersonControls.lookSpeed = 0.01;
@@ -942,10 +960,10 @@ function main() {
   cube7.position.set(0, 30, 40);
   scene.add(cube7);
 
-  const cube8 = new THREE.Mesh(geometry, material);
-  cube8.scale.set(100, 1, 5);
-  cube8.position.set(0, 30, 0);
-  scene.add(cube8);
+  // const cube8 = new THREE.Mesh(geometry, material);
+  // cube8.scale.set(100, 1, 5);
+  // cube8.position.set(0, 30, 0);
+  // scene.add(cube8);
 
   const cube9 = new THREE.Mesh(geometry, material);
   cube9.scale.set(100, 1, 5);
@@ -1143,11 +1161,20 @@ function render(time) {
   // controls.update();
   time *= 0.001;  // convert time to seconds
 
+  elapsedTime += time;
+
+  if (!controlsEnabled && elapsedTime >= 200 * 3000) {
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, 5, 0);
+    controls.update();
+    controlsEnabled = true;
+  }
+
   // firstPersonControls.update(0.1);
 
   // controls.update();
-  // camera.position.y += (cameraSpeed * time/10);
-  // camera.rotation.z += (cameraSpeed * time)/100;
+  camera.position.y += (cameraSpeed * time/10);
+  camera.rotation.z += (cameraSpeed * time)/100;
 
 
   renderer.render(scene, camera);
