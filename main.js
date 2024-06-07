@@ -1163,15 +1163,15 @@ function render(time) {
 
   elapsedTime += time;
 
-  if (!controlsEnabled && elapsedTime >= 200 * 3000) {
+  if (!controlsEnabled && elapsedTime >= 200 * 1000) {
     controls = new OrbitControls(camera, renderer.domElement);
     controls.target.set(0, 5, 0);
     controls.update();
     controlsEnabled = true;
   }
   else {
-    camera.position.y += (cameraSpeed * time/10);
-    camera.rotation.z += (cameraSpeed * time)/100;
+    camera.position.y += (cameraSpeed * time);
+    camera.rotation.z += (cameraSpeed * time)/10;
   }
 
   // firstPersonControls.update(0.1);
