@@ -2,11 +2,18 @@ import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 // import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
+import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import { RectAreaLightUniformsLib } from 'three/addons/lights/RectAreaLightUniformsLib.js';
 import { RectAreaLightHelper } from 'three/addons/helpers/RectAreaLightHelper.js';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+
+
+// import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
+
 
 // let objLoader;
 // {
@@ -36,6 +43,302 @@ function addModel(objFile, mtlFile, scale, position, rotation) {
   });
 }
 
+function addGLBModel(glbFile, scale, position, rotation) {
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.load(glbFile, (gltf) => {
+    const root = gltf.scene;
+    root.rotation.set(rotation[0], rotation[1], rotation[2]);
+    root.scale.set(scale[0], scale[1], scale[2]);
+    root.position.set(position[0], position[1], position[2]);
+    scene.add(root);
+  });
+}
+
+
+addGLBModel(
+  'resources/models/wultuh/ps1_style_walter_white.glb',
+  [.005, .005, .005],
+  [0, .4, 0],
+  [0, -3.14/2, 3.14/2],
+);
+
+addGLBModel(
+  'resources/models/labs/Chemistry.glb',
+  [4, 4, 4],
+  [14.7, 4, 0],
+  [0, 0.1, -.05]
+);
+
+
+addGLBModel(
+  'resources/models/labs/Chemistry.glb',
+  [4, 4, 4],
+  [-15.3, 4, 21],
+  [0, 0.1, -.05]
+);
+
+addGLBModel(
+  'resources/models/labs/Chemistry.glb',
+  [4, 4, 4],
+  [-15.3, 4, -21],
+  [0, 0.1, -.05]
+);
+
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [15, 2, -21],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [15, 2, -14],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [15, 2, -7],
+  [0, 3.14/2, 0]
+);
+
+// addGLBModel(
+//   'resources/models/labs/Table.glb',
+//   [3, 3, 6],
+//   [15, 1, 0],
+//   [0, 3.14/2, 0]
+// );
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [15, 2, 7],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [15, 2, 14],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [15, 2, 21],
+  [0, 3.14/2, 0]
+);
+
+
+
+// addGLBModel(
+//   'resources/models/labs/Table.glb',
+//   [3, 3, 6],
+//   [-15, 2, -21],
+//   [0, 3.14/2, 0]
+// );
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [-15, 2, -14],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [-15, 2, -7],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [-15, 2, 0],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [-15, 2, 7],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/Table.glb',
+  [3, 3, 6],
+  [-15, 2, 14],
+  [0, 3.14/2, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [15, 3.7, 8],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [15, 3.7, -15],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [13, 3.7, -20],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [-13, 3.7, -15],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [-15, 3.7, 8],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [-14, 3.7, 9.5],
+  [0, 0, 0]
+);
+
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [-15, 3.7, 2],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask1.glb',
+  [1, 1, 1],
+  [-14, 3.7, -1],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask2.glb',
+  [1, 1, 1],
+  [-15, 3.7, -5],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask2.glb',
+  [1, 1, 1],
+  [-14.5, 3.7, 15],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask2.glb',
+  [1, 1, 1],
+  [15, 3.7, 13],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask2.glb',
+  [1, 1, 1],
+  [15, 3.7, -7],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask3.glb',
+  [.05, .05, .05],
+  [15, 3.3, 20],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/flask3.glb',
+  [.05, .05, .05],
+  [15, 3.3, 23],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/barrel.glb',
+  [70, 70, 70],
+  [25, 0, 0],
+  [0, 0, 0]
+);
+
+
+addGLBModel(
+  'resources/models/labs/barrel.glb',
+  [70, 70, 70],
+  [30, 0, 20],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/barrel.glb',
+  [70, 70, 70],
+  [-30, 0, -20],
+  [0, 0, 0]
+);
+
+
+addGLBModel(
+  'resources/models/labs/barrel.glb',
+  [70, 70, 70],
+  [-30, 0, 20],
+  [0, 0, 0]
+);
+
+
+addGLBModel(
+  'resources/models/labs/expl.glb',
+  [4, 4, 4],
+  [-30, 0, 0],
+  [0, 0, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/expl.glb',
+  [4, 4, 4],
+  [-30, 0, 3],
+  [0, 3.14/3, 0]
+);
+
+addGLBModel(
+  'resources/models/labs/cop.glb',
+  [.2, .2, .2],
+  [0, 0, -40],
+  [0, 3.14/3, 0]
+);
+
+
+
+
+// addGLBModel(
+//   'resources/models/wultuh/untitled.glb',
+//   [.005, .005, .005],
+//   [0, 1, 0],
+//   [0, 0, 0],
+// );
+
 // The holder of books!!!
 // addModel(
 //   'resources/models/book/book.obj',
@@ -44,7 +347,7 @@ function addModel(objFile, mtlFile, scale, position, rotation) {
 //   [0, 0, 0],
 //   [0, 0, 0],
 // );
-
+/*
 // Road
 addModel(
   'resources/models/cottage/road.obj',
@@ -219,16 +522,24 @@ addModel(
   [8, 0, 6],
   [0, -.5, 0],
 );
-
+*/
 // Gazebo:
-addModel(
-  'resources/models/gazebo/SM_Gazebo_02.obj',
-  'resources/models/gazebo/SM_Gazebo_02.mtl',
-  [.5, .5, .5],
-  [-14, 0, 13],
-  [0, 0, 0],
-);
+// addModel(
+//   'resources/models/gazebo/SM_Gazebo_02.obj',
+//   'resources/models/gazebo/SM_Gazebo_02.mtl',
+//   [.5, .5, .5],
+//   [-14, 0, 13],
+//   [0, 0, 0],
+// );
 
+// addModel(
+//   'resources/models/wultuh/untitled.obj',
+//   'resources/models/wultuh/untitled.mtl',
+//   [.01, .01, .01],
+//   [0, 1, 0],
+//   [0, 0, 0],
+// );
+/*
 // Fountain
 addModel(
   'resources/models/fountain/PUSHILIN_fountain.obj',
@@ -294,7 +605,7 @@ addModel(
   [2.5, 2.5, 2.5],
   [-4, 0.5, 7],
   [0, -.8, 0],
-);
+);*/
 
 // {
 //   const objLoader = new OBJLoader();
@@ -308,7 +619,7 @@ addModel(
 //   });
 // }
 
-let renderer, cube, scene, camera, cubes, geometry, loader, controls;
+let renderer, cube, scene, camera, cubes, geometry, loader, controls, firstPersonControls;
 
 function main() {
   const canvas = document.querySelector('#c');
@@ -318,6 +629,11 @@ function main() {
     canvas,
     alpha: true,
   });
+
+  // canvas.addEventListener("click", async () => {
+  //   await canvas.requestPointerLock();
+  // });
+  
   RectAreaLightUniformsLib.init();
   renderer.setSize(window.innerWidth, window.innerHeight)
 
@@ -332,25 +648,38 @@ function main() {
   camera.position.set(0, 10, 20);
   camera.lookAt(0, 0, 0);
 
+  // controls = new PointerLockControls(camera, document.body);
+
+  // document.addEventListener('click', function () {
+  //   controls.lock();
+  // });
+
+
+
   controls = new OrbitControls(camera, renderer.domElement);
   controls.target.set(0, 5, 0);
   controls.update();
 
+  // firstPersonControls = new FirstPersonControls(camera, renderer.domElement);
+  // firstPersonControls.lookSpeed = 0.01;
+  // firstPersonControls.movementSpeed = 1;
+  
+
 
   scene = new THREE.Scene();
 
-  const planeSize = 40;
+  const planeSize = 200;
 
   loader = new THREE.TextureLoader();
 
 
 
-  var texture = loader.load('resources/images/grass.png');
+  var texture = loader.load('resources/images/lab-floor.png');
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
   texture.magFilter = THREE.NearestFilter;
   texture.colorSpace = THREE.SRGBColorSpace;
-  const repeats = planeSize / 2;
+  var repeats = planeSize / 2;
   texture.repeat.set(repeats, repeats);
 
   const planeGeo = new THREE.PlaneGeometry(planeSize, planeSize);
@@ -359,7 +688,7 @@ function main() {
     side: THREE.DoubleSide,
   });
   const mesh = new THREE.Mesh(planeGeo, planeMat);
-  mesh.rotation.x = Math.PI * -.5;
+  mesh.rotation.x = Math.PI/2;
   scene.add(mesh);
 
   // {
@@ -403,6 +732,7 @@ function main() {
 
   var color, intensity, light, helper;
 
+  /*
   // Directional Light to Simulate The Sun:
   color = 0xFFFFFF;
   intensity = 1;
@@ -477,10 +807,10 @@ function main() {
   scene.add(light);
   scene.add(light.target);
   helper = new THREE.SpotLightHelper(light);
-  scene.add(helper);
+  scene.add(helper);*/
 
 
-
+/*
   // RectArea Light for the Pool
   color = 0x14A7E4;
   intensity = 10;
@@ -491,7 +821,7 @@ function main() {
   light.rotation.x = THREE.MathUtils.degToRad(90);
   scene.add(light);
   helper = new RectAreaLightHelper(light);
-  light.add(helper);
+  light.add(helper);*/
 
   
   const boxWidth = 1;
@@ -499,8 +829,77 @@ function main() {
   const boxDepth = 1;
   geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
   
-  var material = new THREE.MeshBasicMaterial({ color: 0x7D7D7D });  // Red color
+  // var material = new THREE.MeshBasicMaterial({ color: 0x7D7D7D });  // Red color
+  
+  const textureLoader = new THREE.TextureLoader();
+  texture = textureLoader.load('resources/images/wall.png');
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.magFilter = THREE.NearestFilter;
+  texture.colorSpace = THREE.SRGBColorSpace;
+  repeats = planeSize / 2;
+  texture.repeat.set(repeats, repeats);
+  
+  // Create a material with the texture
+  var material = new THREE.MeshBasicMaterial({ map: texture });
 
+  const cube = new THREE.Mesh(geometry, material);
+  cube.scale.set(1, 60, 85);
+  cube.position.set(-50, 1, 9);
+  scene.add(cube);
+
+  const cube2 = new THREE.Mesh(geometry, material);
+  cube2.scale.set(1, 60, 85);
+  cube2.position.set(50, 1, 9);
+  scene.add(cube2);
+
+  const cube3 = new THREE.Mesh(geometry, material);
+  cube3.rotation.set(0, 3.14/2, 0);
+  cube3.scale.set(1, 60, 100);
+  cube3.position.set(0, 1, 50);
+  scene.add(cube3);
+
+  const cube4 = new THREE.Mesh(geometry, material);
+  cube4.scale.set(100, 1, 5);
+  cube4.position.set(0, 30, 10);
+  scene.add(cube4);
+
+  const cube5 = new THREE.Mesh(geometry, material);
+  cube5.scale.set(100, 1, 5);
+  cube5.position.set(0, 30, 20);
+  scene.add(cube5);
+
+  const cube6 = new THREE.Mesh(geometry, material);
+  cube6.scale.set(100, 1, 5);
+  cube6.position.set(0, 30, 30);
+  scene.add(cube6);
+
+  const cube7 = new THREE.Mesh(geometry, material);
+  cube7.scale.set(100, 1, 5);
+  cube7.position.set(0, 30, 40);
+  scene.add(cube7);
+
+  const cube8 = new THREE.Mesh(geometry, material);
+  cube8.scale.set(100, 1, 5);
+  cube8.position.set(0, 30, 0);
+  scene.add(cube8);
+
+  const cube9 = new THREE.Mesh(geometry, material);
+  cube9.scale.set(100, 1, 5);
+  cube9.position.set(0, 30, -10);
+  scene.add(cube9);
+
+  const cube10 = new THREE.Mesh(geometry, material);
+  cube10.scale.set(100, 1, 5);
+  cube10.position.set(0, 30, -20);
+  scene.add(cube10);
+
+  const cube11 = new THREE.Mesh(geometry, material);
+  cube11.scale.set(100, 1, 5);
+  cube11.position.set(0, 30, -30);
+  scene.add(cube11);
+
+  /*
   // Primary shapes:
 
   const cube = new THREE.Mesh(geometry, material);
@@ -644,7 +1043,7 @@ function main() {
   sphere2.scale.set(.5, .5, .5);
   sphere2.position.set(7, .05, 12);
   scene.add(sphere2);
-
+*/
 
   
 
@@ -663,9 +1062,16 @@ function main() {
 }
 
 
+let cameraSpeed = .001;
+
 function render(time) {
-  controls.update();
+  // controls.update();
   time *= 0.001;  // convert time to seconds
+
+  // firstPersonControls.update(0.1);
+
+  // controls.update();
+  // camera.position.z -= cameraSpeed * time;
 
 
   renderer.render(scene, camera);
