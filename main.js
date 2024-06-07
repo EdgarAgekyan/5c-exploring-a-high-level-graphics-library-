@@ -805,74 +805,74 @@ function main() {
   light.target.position.set(-5, 0, 0);
   scene.add(light);
   scene.add(light.target);
-/*
+
   // SpotLights for lamps:
   color = 0xFFFFFF;
-  intensity = 4000;
+  intensity = 1000;
   light = new THREE.SpotLight(color, intensity);
   light.position.set(0, 28, 30);
   light.target.position.set(0, 0, -6.5);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
-  helper = new THREE.SpotLightHelper(light);
+  // helper = new THREE.SpotLightHelper(light);
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 4000;
+  intensity = 1000;
   light = new THREE.SpotLight(color, intensity);
   light.position.set(18, 28, 30);
   light.target.position.set(18, 0, -10);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
-  helper = new THREE.SpotLightHelper(light);
+  // helper = new THREE.SpotLightHelper(light);
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 4000;
+  intensity = 1000;
   light = new THREE.SpotLight(color, intensity);
   light.position.set(-18, 28, 30);
   light.target.position.set(-18, 0, -10);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
-  helper = new THREE.SpotLightHelper(light);
+  // helper = new THREE.SpotLightHelper(light);
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 4000;
+  intensity = 1000;
   light = new THREE.SpotLight(color, intensity);
   light.position.set(0, 28, -20);
   light.target.position.set(0, 0, -10);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
-  helper = new THREE.SpotLightHelper(light);
+  // helper = new THREE.SpotLightHelper(light);
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 4000;
+  intensity = 1000;
   light = new THREE.SpotLight(color, intensity);
   light.position.set(18, 28, -20);
   light.target.position.set(18, 0, -16.5);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
-  helper = new THREE.SpotLightHelper(light);
+  // helper = new THREE.SpotLightHelper(light);
   scene.add(helper);
 
   color = 0xFFFFFF;
-  intensity = 4000;
+  intensity = 1000;
   light = new THREE.SpotLight(color, intensity);
   light.position.set(-18, 28, -20);
   light.target.position.set(-18, 0, -16.5);
   light.angle = 10;
   scene.add(light);
   scene.add(light.target);
-  helper = new THREE.SpotLightHelper(light);
+  // helper = new THREE.SpotLightHelper(light);
   scene.add(helper);
-  */
+  
 
   redSpotlight = new THREE.SpotLight(0xEE4B2B, 1000);
   redSpotlight.position.set(0, 7, -40);
@@ -880,7 +880,7 @@ function main() {
   redSpotlight.angle = 10;
   scene.add(redSpotlight);
   scene.add(redSpotlight.target);
-  scene.add(new THREE.SpotLightHelper(redSpotlight));
+  // scene.add(new THREE.SpotLightHelper(redSpotlight));
 
   blueSpotlight = new THREE.SpotLight(0x0000FF, 1000);
   blueSpotlight.position.set(0, 7, -40);
@@ -888,7 +888,7 @@ function main() {
   blueSpotlight.angle = 10;
   scene.add(blueSpotlight);
   scene.add(blueSpotlight.target);
-  scene.add(new THREE.SpotLightHelper(blueSpotlight));
+  // scene.add(new THREE.SpotLightHelper(blueSpotlight));
 
 
 /*
@@ -1169,12 +1169,15 @@ function render(time) {
     controls.update();
     controlsEnabled = true;
   }
+  else {
+    camera.position.y += (cameraSpeed * time/10);
+    camera.rotation.z += (cameraSpeed * time)/100;
+  }
 
   // firstPersonControls.update(0.1);
 
   // controls.update();
-  camera.position.y += (cameraSpeed * time/10);
-  camera.rotation.z += (cameraSpeed * time)/100;
+
 
 
   renderer.render(scene, camera);
