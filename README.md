@@ -1,4 +1,6 @@
 # 5c
+<br>
+PRESS SPACE TO BEGIN ANIMATION/MUSIC
 
 <br>
 For this assignment, I decided the ending scene to Breaking Bad (Spoiler Alert): https://www.youtube.com/watch?v=J9RP-KfvdKc

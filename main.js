@@ -59,6 +59,8 @@ let isRedLightVisible = true;
 
 let elapsedTime = 0;
 let controlsEnabled = false;
+let animationStarted = false;
+
 
 addGLBModel(
   'resources/models/wultuh/ps1_style_walter_white.glb',
@@ -681,6 +683,7 @@ function main() {
   // canvas.addEventListener("click", async () => {
   //   await canvas.requestPointerLock();
   // });
+
   
   RectAreaLightUniformsLib.init();
   renderer.setSize(window.innerWidth, window.innerHeight)
@@ -700,14 +703,22 @@ function main() {
   const listener = new THREE.AudioListener();
   camera.add(listener);
 
-  const sound = new THREE.Audio(listener);
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space' && !animationStarted) {
+      // startAnimation();
+      // console.log('hi"')
+      animationStarted = true;
+      const sound = new THREE.Audio(listener);
 
-  const audioLoader = new THREE.AudioLoader();
-  audioLoader.load('resources/models/babyblue.mp3', function(buffer) {
-    sound.setBuffer(buffer);
-    sound.setLoop(true);
-    sound.setVolume(0.5);
-    sound.play();
+      const audioLoader = new THREE.AudioLoader();
+      audioLoader.load('resources/models/babyblue.mp3', function(buffer) {
+        sound.setBuffer(buffer);
+        sound.setLoop(true);
+        sound.setVolume(0.5);
+          // if (!animationStarted) return;
+        sound.play();
+      });
+    }
   });
 
 
@@ -1158,6 +1169,7 @@ function toggleSpotlights() {
 let cameraSpeed = .001;
 
 function render(time) {
+if (animationStarted) {
   // controls.update();
   time *= 0.001;  // convert time to seconds
 
@@ -1178,12 +1190,14 @@ function render(time) {
 
   // controls.update();
 
-
+  }
 
   renderer.render(scene, camera);
 
   requestAnimationFrame(render);
 }
+
+
 
 main();
 
